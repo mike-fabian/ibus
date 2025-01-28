@@ -2082,9 +2082,11 @@ void ibus_engine_delete_surrounding_text (IBusEngine      *engine,
             text = ibus_text_new_from_ucs4 (ucs);
             g_free (ucs);
             priv->surrounding_cursor_pos = cursor_pos;
+            priv->selection_anchor_pos = cursor_pos;
         } else {
             text = text_empty;
             priv->surrounding_cursor_pos = 0;
+            priv->selection_anchor_pos = 0;
         }
 
         g_object_unref (priv->surrounding_text);
